@@ -1,8 +1,10 @@
 function getTotalBooksCount(books) {
-  let totalBooks =0;
-  for(let book in books){
-    totalBooks++;
-  }
+  const totalBooks = books.reduce((counter, book) => {
+    if(book) counter+=1;
+    
+    return counter;
+  }, 0);
+
   return totalBooks;
 }
 
